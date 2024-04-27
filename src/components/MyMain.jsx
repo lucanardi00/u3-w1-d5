@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './MyMain.module.css';
 
 const MyMain = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -79,7 +80,7 @@ const MyMain = () => {
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4">
             {trendingMovies.map((movie) => (
               <div className="col mb-2 text-center px-1" key={movie.id}>
-                <img className="img-fluid" src={movie.poster} alt={movie.title} />
+                <img className={`img-fluid ${styles.hoverEffect}`} src={movie.poster} alt={movie.title} />
               </div>
             ))}
           </div>
@@ -89,7 +90,7 @@ const MyMain = () => {
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4">
             {watchAgainMovies.map((movie) => (
               <div className="col mb-2 text-center px-1" key={movie.id}>
-                <img className="img-fluid" src={movie.poster} alt={movie.title} />
+                <img className={`img-fluid ${styles.hoverEffect}`} src={movie.poster} alt={movie.title} />
               </div>
             ))}
           </div>
@@ -99,7 +100,7 @@ const MyMain = () => {
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4">
             {newReleasesMovies.map((movie) => (
               <div className="col mb-2 text-center px-1" key={movie.id}>
-                <img className="img-fluid" src={movie.poster} alt={movie.title} />
+                <img className={`img-fluid ${styles.hoverEffect}`} src={movie.poster} alt={movie.title} />
               </div>
             ))}
           </div>

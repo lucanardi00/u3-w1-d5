@@ -1,7 +1,7 @@
-.col img {
-  transition: transform 0.2s;
+.hoverEffect {
+  transition: transform 0.2s ease-in-out;
 }
 
-.col img:hover {
+.hoverEffect:hover {
   transform: scale(1.1);
 }

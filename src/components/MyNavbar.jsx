@@ -1,9 +1,19 @@
 import logo from './logo.png'
-import React from 'react';
-import { Navbar, Nav, NavItem, NavLink, Image } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar, Nav, NavItem, NavLink, Image, Dropdown, DropdownButton } from 'react-bootstrap';
 import styles from './MyNavbar.module.css';
 
 const MyNavbar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
+      console.log('Search term:', searchTerm); 
+      setSearchTerm(''); 
+    }
+  };
+
   return (
     <Navbar bg="transparent" expand="lg" className="navbar" data-bs-theme="dark">
       <Navbar.Brand href="#home">
@@ -30,10 +40,21 @@ const MyNavbar = () => {
         </Nav>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <NavItem>
-              <NavLink href="#">
-                <i className="bi bi-search"></i>
-              </NavLink>
+          <NavItem>
+              <DropdownButton id="dropdown-search" title={<i className="bi bi-search"></i>}>
+                <Dropdown.Item href="#">
+                  <form onSubmit={handleSearch}>
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button type="submit" style={{ display: 'none' }}>
+                    </button>
+                  </form>
+                </Dropdown.Item>
+              </DropdownButton>
             </NavItem>
             <NavItem>
               <NavLink href="#about" className={styles.kids}>KIDS</NavLink>
