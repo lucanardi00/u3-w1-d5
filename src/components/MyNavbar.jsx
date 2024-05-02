@@ -26,16 +26,16 @@ const MyNavbar = () => {
             <NavLink href="#home">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#about">TV Shows</NavLink>
+            <NavLink href="#tvshows">TV Shows</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#about">Movies</NavLink>
+            <NavLink href="#movies">Movies</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#about">Recently Added</NavLink>
+            <NavLink href="#recent">Recently Added</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#about">My List</NavLink>
+            <NavLink href="#fav">My List</NavLink>
           </NavItem>
         </Nav>
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
